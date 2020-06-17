@@ -18,3 +18,10 @@ class MembershipService:
 
     def get_memberships(self):
         return self.items.values()
+
+    def get_membership(self, id) -> MembershipDTO:
+        result = None
+        if id in self.items:
+            result = self.items[id]
+
+        return result
