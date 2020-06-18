@@ -10,9 +10,13 @@ class TestMembershipService:
 
         # Act
         result = service.add_membership(MembershipDTO(id=1, name='Jack Sparrow', level='Singleton'))
+        stored_membership = service.get_membership(1)
 
-        # Arrange
+        # Assert
         assert result
+        assert stored_membership.id == 1
+        assert stored_membership.name == 'Jack Sparrow'
+        assert stored_membership.level == 'Singleton'
 
     def test_add_duplicated_membership(self):
 
