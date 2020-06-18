@@ -12,7 +12,6 @@ class MembershipService:
         result = False
         if new_membership.id not in self.items:
             self.items[new_membership.id] = new_membership
-            result = True
 
         return result
 
